@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private Button btnlogin;
+    private TextView register;
     private EditText username, password;
     //isi email dan password
     private String xusername = "admin";
@@ -38,6 +40,15 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(MainActivity.this, "Username or password is incorrect", Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+
+        register = findViewById(R.id.txtRegister);
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent register =new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(register);
             }
         });
     }
